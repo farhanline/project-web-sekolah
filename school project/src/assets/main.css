@@ -1,0 +1,38 @@
+@import './base.css';
+
+/* Mengubah #app agar memenuhi lebar layar penuh */
+#app {
+  width: 100%;        /* Memastikan lebar 100% */
+  max-width: 100%;    /* Menghapus batasan 1280px */
+  margin: 0;          /* Menghapus margin auto agar tidak di tengah */
+  padding: 0;         /* Menghapus padding bawaan agar konten mepet ke pinggir */
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+/* Menghapus sistem grid yang membagi layar menjadi 2 kolom */
+@media (min-width: 1024px) {
+  body {
+    display: block;    /* Ubah dari flex ke block agar konten mengalir ke bawah */
+    place-items: unset;
+  }
+
+  #app {
+    display: block;    /* Ubah dari grid ke block agar tidak terbagi dua kolom */
+    grid-template-columns: none; 
+    padding: 0;        /* Reset padding di layar besar */
+  }
+}
